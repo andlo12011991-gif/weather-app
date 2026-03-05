@@ -17,3 +17,5 @@
 ```bash
 npm install
 npm run dev
+
+weather-app-44f2.vercel.app
