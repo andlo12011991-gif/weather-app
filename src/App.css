@@ -1,0 +1,304 @@
+/* ---------- ТЕМА через CSS-переменные ---------- */
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #111;
+  --muted: #666;
+  --border: #e6e8ef;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --inputBorder: #cfd5e3;
+  --accent: #111;
+  --accentText: #fff;
+  --soft: #fafbff;
+  --dangerBg: #ffecec;
+  --dangerBorder: #ffb3b3;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0f1220;
+  --card: #151a2e;
+  --text: #eef1ff;
+  --muted: #b6b9cc;
+  --border: #2a3154;
+  --shadow: rgba(0, 0, 0, 0.35);
+  --inputBorder: #343c63;
+  --accent: #eef1ff;
+  --accentText: #0f1220;
+  --soft: #10162a;
+  --dangerBg: rgba(255, 0, 0, 0.12);
+  --dangerBorder: rgba(255, 0, 0, 0.25);
+}
+
+/* ---------- базовые блоки ---------- */
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  width: min(900px, 100%);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 12px 30px var(--shadow);
+}
+
+.topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.title {
+  margin: 0 0 6px;
+  font-size: 28px;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ---------- поиск ---------- */
+.searchRow {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.input {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--inputBorder);
+  outline: none;
+  background: transparent;
+  color: var(--text);
+}
+
+.input:focus {
+  border-color: #8aa0ff;
+}
+
+.btn {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--inputBorder);
+  background: var(--accent);
+  color: var(--accentText);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btnAlt {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--inputBorder);
+  background: transparent;
+  color: var(--text);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ghost {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* ---------- избранное ---------- */
+.favRow {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: start;
+  margin-top: 12px;
+}
+
+.favTitle {
+  color: var(--muted);
+  font-size: 14px;
+  padding-top: 4px;
+}
+
+.favList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.chipBtn {
+  border: none;
+  background: transparent;
+  color: var(--text);
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.chipX {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ---------- сообщения ---------- */
+.error {
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  background: var(--dangerBg);
+  border: 1px solid var(--dangerBorder);
+}
+
+.loading {
+  margin-top: 12px;
+  color: var(--muted);
+}
+
+/* ---------- результат ---------- */
+.result {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--soft);
+}
+
+.resultHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.city {
+  margin: 0;
+  font-size: 22px;
+}
+
+.smallMuted {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.box {
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+.k {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.v {
+  margin-top: 6px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/* ---------- прогноз ---------- */
+.forecast {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.forecastTitle {
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.forecastGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.day {
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+.dayDate {
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.dayTemps {
+  display: grid;
+  gap: 4px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.dayDesc {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.hint {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* ---------- адаптив ---------- */
+@media (max-width: 720px) {
+  .searchRow {
+    grid-template-columns: 1fr;
+  }
+  .forecastGrid {
+    grid-template-columns: 1fr;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
